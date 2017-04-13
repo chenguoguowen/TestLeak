@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
-
+#include <QDebug>
 #include <QTimer>
 
 namespace Ui {
@@ -27,6 +27,10 @@ private:
 public:
     QSerialPort* m_serialport;
     QTimer* timer;
+    QStringList m_resulteList;
+
+public:
+    void handingRevData();
 
 public slots:
     void on_pushButton_clicked();

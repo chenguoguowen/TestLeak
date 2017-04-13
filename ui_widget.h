@@ -52,14 +52,15 @@ public:
     QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_5;
     QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_8;
     QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_8;
     QLineEdit *lineEdit_9;
     QLineEdit *lineEdit_10;
-    QLineEdit *lineEdit_14;
+    QLineEdit *lineEdit_11;
     QLineEdit *lineEdit_12;
     QLineEdit *lineEdit_13;
-    QLineEdit *lineEdit_11;
+    QLineEdit *lineEdit_14;
+    QLineEdit *lineEdit_15;
 
     void setupUi(QWidget *Widget)
     {
@@ -224,19 +225,19 @@ public:
 
         verticalLayout->addWidget(lineEdit_6);
 
-        lineEdit_8 = new QLineEdit(Widget);
-        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
-        lineEdit_8->setEnabled(false);
-        lineEdit_8->setFont(font1);
-
-        verticalLayout->addWidget(lineEdit_8);
-
         lineEdit_7 = new QLineEdit(Widget);
         lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
         lineEdit_7->setEnabled(false);
         lineEdit_7->setFont(font1);
 
         verticalLayout->addWidget(lineEdit_7);
+
+        lineEdit_8 = new QLineEdit(Widget);
+        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+        lineEdit_8->setEnabled(false);
+        lineEdit_8->setFont(font1);
+
+        verticalLayout->addWidget(lineEdit_8);
 
         lineEdit_9 = new QLineEdit(Widget);
         lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
@@ -252,12 +253,12 @@ public:
 
         verticalLayout->addWidget(lineEdit_10);
 
-        lineEdit_14 = new QLineEdit(Widget);
-        lineEdit_14->setObjectName(QStringLiteral("lineEdit_14"));
-        lineEdit_14->setEnabled(false);
-        lineEdit_14->setFont(font1);
+        lineEdit_11 = new QLineEdit(Widget);
+        lineEdit_11->setObjectName(QStringLiteral("lineEdit_11"));
+        lineEdit_11->setEnabled(false);
+        lineEdit_11->setFont(font1);
 
-        verticalLayout->addWidget(lineEdit_14);
+        verticalLayout->addWidget(lineEdit_11);
 
         lineEdit_12 = new QLineEdit(Widget);
         lineEdit_12->setObjectName(QStringLiteral("lineEdit_12"));
@@ -273,18 +274,24 @@ public:
 
         verticalLayout->addWidget(lineEdit_13);
 
-        lineEdit_11 = new QLineEdit(Widget);
-        lineEdit_11->setObjectName(QStringLiteral("lineEdit_11"));
-        lineEdit_11->setEnabled(false);
-        lineEdit_11->setFont(font1);
+        lineEdit_14 = new QLineEdit(Widget);
+        lineEdit_14->setObjectName(QStringLiteral("lineEdit_14"));
+        lineEdit_14->setEnabled(false);
+        lineEdit_14->setFont(font1);
 
-        verticalLayout->addWidget(lineEdit_11);
+        verticalLayout->addWidget(lineEdit_14);
 
 
         formLayout->setLayout(0, QFormLayout::FieldRole, verticalLayout);
 
 
         formLayout_2->setLayout(0, QFormLayout::SpanningRole, formLayout);
+
+        lineEdit_15 = new QLineEdit(Widget);
+        lineEdit_15->setObjectName(QStringLiteral("lineEdit_15"));
+        lineEdit_15->setEnabled(false);
+
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, lineEdit_15);
 
 
         formLayout_3->setLayout(0, QFormLayout::SpanningRole, formLayout_2);
@@ -298,7 +305,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Widget", "PushButton", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("Widget", "\344\270\212\344\274\240\347\273\223\346\236\234", Q_NULLPTR));
         label->setText(QApplication::translate("Widget", "\346\235\241\347\240\201:", Q_NULLPTR));
         label_2->setText(QApplication::translate("Widget", "Name:", Q_NULLPTR));
         label_3->setText(QApplication::translate("Widget", "Value:", Q_NULLPTR));
@@ -313,6 +320,7 @@ public:
         label_12->setText(QApplication::translate("Widget", "Data1:", Q_NULLPTR));
         label_13->setText(QApplication::translate("Widget", "Data2:", Q_NULLPTR));
         label_14->setText(QApplication::translate("Widget", "Data3:", Q_NULLPTR));
+        lineEdit_15->setText(QString());
     } // retranslateUi
 
 };

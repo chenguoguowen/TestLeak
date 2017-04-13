@@ -19,7 +19,7 @@
      <item row="1" column="0">
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>PushButton</string>
+        <string>上传结果</string>
        </property>
       </widget>
      </item>
@@ -320,7 +320,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_8">
+          <widget class="QLineEdit" name="lineEdit_7">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -333,7 +333,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_7">
+          <widget class="QLineEdit" name="lineEdit_8">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -372,7 +372,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_14">
+          <widget class="QLineEdit" name="lineEdit_11">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -411,7 +411,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_11">
+          <widget class="QLineEdit" name="lineEdit_14">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -426,6 +426,16 @@
         </layout>
        </item>
       </layout>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_15">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

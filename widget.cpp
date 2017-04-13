@@ -32,12 +32,49 @@ Widget::~Widget()
 
 void Widget::updateAA()
 {
-    QByteArray requestData = m_serialport->readAll();
-    if(!requestData.isEmpty())
+    QString recieveData;
+    recieveData = m_serialport->readAll();
+    if(recieveData.isEmpty())
     {
-        ui->lineEdit->setText(requestData);
+        //        ui->lineEdit->setText(m_recieveData);
+
+        return;
     }
-    requestData.clear();
+
+    qDebug()<<recieveData;
+    m_resulteList.clear();
+    m_resulteList = recieveData.split(",");
+
+    recieveData.clear();
+
+    handingRevData();
+}
+
+void Widget::handingRevData()
+{
+    int i = 0;
+
+    if(m_resulteList.length() == 13)
+    {
+        ui->lineEdit_2->setText(m_resulteList[i++]);
+        ui->lineEdit_3->setText(m_resulteList[i++]);
+        ui->lineEdit_4->setText(m_resulteList[i++]);
+        ui->lineEdit_5->setText(m_resulteList[i++]);
+        ui->lineEdit_6->setText(m_resulteList[i++]);
+        ui->lineEdit_7->setText(m_resulteList[i++]);
+        ui->lineEdit_8->setText(m_resulteList[i++]);
+        ui->lineEdit_9->setText(m_resulteList[i++]);
+        ui->lineEdit_10->setText(m_resulteList[i++]);
+        ui->lineEdit_11->setText(m_resulteList[i++]);
+        ui->lineEdit_12->setText(m_resulteList[i++]);
+        ui->lineEdit_13->setText(m_resulteList[i++]);
+        ui->lineEdit_14->setText(m_resulteList[i++]);
+    }
+    else
+    {
+        ui->lineEdit_15->setText("Data error");
+        return;
+    }
 }
 
 void Widget::on_pushButton_clicked()
