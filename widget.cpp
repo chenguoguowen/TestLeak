@@ -44,5 +44,6 @@ void Widget::on_pushButton_clicked()
 {
     QByteArray TxData = "1111";
     m_serialport->write(TxData);
+
 }
 
