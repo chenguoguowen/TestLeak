@@ -6,6 +6,10 @@
 #include <QtSerialPort/QSerialPortInfo>
 #include <QDebug>
 #include <QTimer>
+#include <QMessageBox>
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include "datamanage.h"
 
 namespace Ui {
 class Widget;
@@ -28,9 +32,17 @@ public:
     QSerialPort* m_serialport;
     QTimer* timer;
     QStringList m_resulteList;
+    QString m_barCode;
+
+    dataManage* DB;
 
 public:
     void handingRevData();
+    void saveData();
+
+    void mousePressEvent(QMouseEvent* event);
+    void keyPressEvent ( QKeyEvent * event );
+//    void keyReleaseEvent ( QKeyEvent * event );
 
 public slots:
     void on_pushButton_clicked();

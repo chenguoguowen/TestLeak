@@ -66,6 +66,7 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
+        Widget->setEnabled(true);
         Widget->resize(644, 523);
         formLayout_3 = new QFormLayout(Widget);
         formLayout_3->setSpacing(6);
@@ -182,7 +183,7 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         lineEdit = new QLineEdit(Widget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setEnabled(false);
+        lineEdit->setEnabled(true);
         QFont font1;
         font1.setFamily(QStringLiteral("Andalus"));
         font1.setPointSize(10);
@@ -305,7 +306,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Widget", "\344\270\212\344\274\240\347\273\223\346\236\234", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("Widget", "\346\211\247\350\241\214\347\273\223\346\236\234", Q_NULLPTR));
         label->setText(QApplication::translate("Widget", "\346\235\241\347\240\201:", Q_NULLPTR));
         label_2->setText(QApplication::translate("Widget", "Name:", Q_NULLPTR));
         label_3->setText(QApplication::translate("Widget", "Value:", Q_NULLPTR));

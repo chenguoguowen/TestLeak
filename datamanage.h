@@ -21,7 +21,7 @@ public:
 public:
     void initializeDB();
 //    void createTable(QString,QString);
-//    void insertData(QString,QString);
+    bool insertData(QString);
 //    QString selectData(QString);
 //    QString existsSelect(QString,QString,QString);
 //    void updateSql(QString,QString,QString);

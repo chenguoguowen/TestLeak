@@ -236,6 +236,8 @@ Makefile: testleak.pro ..\..\qt5.7\5.7\msvc2015\mkspecs\win32-msvc2015\qmake.con
 		..\..\qt5.7\5.7\msvc2015\lib\qtmaind.prl \
 		..\..\qt5.7\5.7\msvc2015\lib\Qt5Widgets.prl \
 		..\..\qt5.7\5.7\msvc2015\lib\Qt5Gui.prl \
+		..\..\qt5.7\5.7\msvc2015\lib\Qt5Sql.prl \
+		..\..\qt5.7\5.7\msvc2015\lib\Qt5Network.prl \
 		..\..\qt5.7\5.7\msvc2015\lib\Qt5SerialPort.prl \
 		..\..\qt5.7\5.7\msvc2015\lib\Qt5Core.prl
 	$(QMAKE) -spec win32-msvc2015 "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile testleak.pro
@@ -402,6 +404,8 @@ testleak.pro:
 ..\..\qt5.7\5.7\msvc2015\lib\qtmaind.prl:
 ..\..\qt5.7\5.7\msvc2015\lib\Qt5Widgets.prl:
 ..\..\qt5.7\5.7\msvc2015\lib\Qt5Gui.prl:
+..\..\qt5.7\5.7\msvc2015\lib\Qt5Sql.prl:
+..\..\qt5.7\5.7\msvc2015\lib\Qt5Network.prl:
 ..\..\qt5.7\5.7\msvc2015\lib\Qt5SerialPort.prl:
 ..\..\qt5.7\5.7\msvc2015\lib\Qt5Core.prl:
 qmake: FORCE

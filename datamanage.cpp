@@ -31,10 +31,6 @@ void dataManage::initializeDB()
 }
 
 
-
-
-
-
 void dataManage::exec(QString sql )
 {
     lock.lock();
@@ -42,9 +38,8 @@ void dataManage::exec(QString sql )
 
     if(!sql_query.exec())
     {
-//        qDebug()<<insert_Sql;
         qDebug()<<sql_query.lastError();
-        qDebug()<<"Insert faile!";
+        qDebug()<<"exec faile!";
     }
     lock.unlock();
 }
@@ -70,6 +65,21 @@ QStringList dataManage::selectAllData(QString str)
 
     lock.unlock();
     return list;
+}
+
+bool dataManage::insertData(QString sqlStr)
+{
+    lock.lock();
+    sql_query.prepare(sqlStr);
+
+    if(!sql_query.exec())
+    {
+        qDebug()<<dataBase.lastError();
+        qDebug()<<"Insert faile!";
+        return false;
+    }
+    return true;
+    lock.unlock();
 }
 
 //void dataManage::createTable(QString tableName,QString rankName)
