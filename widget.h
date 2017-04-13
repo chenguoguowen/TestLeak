@@ -28,7 +28,7 @@ public:
     QSerialPort* m_serialport;
     QTimer* timer;
     QStringList m_resulteList;
-
+    QString a;
 public:
     void handingRevData();
 
