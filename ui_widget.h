@@ -17,7 +17,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -28,7 +27,6 @@ class Ui_Widget
 public:
     QFormLayout *formLayout_3;
     QFormLayout *formLayout_2;
-    QPushButton *pushButton;
     QFormLayout *formLayout;
     QVBoxLayout *verticalLayout_2;
     QLabel *label;
@@ -61,6 +59,7 @@ public:
     QLineEdit *lineEdit_13;
     QLineEdit *lineEdit_14;
     QLineEdit *lineEdit_15;
+    QLabel *label_15;
 
     void setupUi(QWidget *Widget)
     {
@@ -75,11 +74,6 @@ public:
         formLayout_2 = new QFormLayout();
         formLayout_2->setSpacing(6);
         formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
-        pushButton = new QPushButton(Widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        formLayout_2->setWidget(1, QFormLayout::LabelRole, pushButton);
-
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QStringLiteral("formLayout"));
@@ -294,6 +288,17 @@ public:
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, lineEdit_15);
 
+        label_15 = new QLabel(Widget);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Aharoni"));
+        font2.setPointSize(12);
+        font2.setBold(true);
+        font2.setWeight(75);
+        label_15->setFont(font2);
+
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, label_15);
+
 
         formLayout_3->setLayout(0, QFormLayout::SpanningRole, formLayout_2);
 
@@ -306,7 +311,6 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Widget", "\346\211\247\350\241\214\347\273\223\346\236\234", Q_NULLPTR));
         label->setText(QApplication::translate("Widget", "\346\235\241\347\240\201:", Q_NULLPTR));
         label_2->setText(QApplication::translate("Widget", "Name:", Q_NULLPTR));
         label_3->setText(QApplication::translate("Widget", "Value:", Q_NULLPTR));
@@ -322,6 +326,7 @@ public:
         label_13->setText(QApplication::translate("Widget", "Data2:", Q_NULLPTR));
         label_14->setText(QApplication::translate("Widget", "Data3:", Q_NULLPTR));
         lineEdit_15->setText(QString());
+        label_15->setText(QApplication::translate("Widget", "ExeResulte:", Q_NULLPTR));
     } // retranslateUi
 
 };

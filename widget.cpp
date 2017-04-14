@@ -16,23 +16,21 @@ Widget::Widget(QWidget *parent) :
     QString sqlStr = "create table if not exists dataTable (ID integer primary key,Name varchar(50),Value varchar(50),Date varchar(50),Time varchar(50),Program varchar(50),Sequence varchar(50),Lot varchar(50),Operator varchar(50),Result varchar(50), Units varchar(50), Data1 varchar(50), Data2 varchar(50), Data3 varchar(50))";
     DB->exec(sqlStr);
 
-    m_serialport= new QSerialPort();
-    m_serialport->setPortName("COM2");
-    m_serialport->open(QIODevice::ReadWrite);
+    RecvDate = new RecieveData();
+    RecvDate->start();
 
-    m_serialport->setBaudRate(9600);
-    m_serialport->setDataBits(QSerialPort::Data8);
-    m_serialport->setParity(QSerialPort::NoParity);
-    m_serialport->setStopBits(QSerialPort::OneStop);
-    m_serialport->setFlowControl(QSerialPort::NoFlowControl);
 
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateAA()));
-    timer->start(1000);
 }
 
 Widget::~Widget()
 {
+    if(RecvDate != NULL)
+    {
+        RecvDate->isRun = false;
+        RecvDate->wait();
+        delete RecvDate;
+    }
+    delete DB;
     delete ui;
 }
 
@@ -116,26 +114,6 @@ void Widget::mousePressEvent(QMouseEvent* event)
 }
 
 
-void Widget::updateAA()
-{
-    QString recieveData;
-    recieveData = m_serialport->readAll();
-    if(recieveData.isEmpty())
-    {
-        return;
-    }
-
-    qDebug()<<recieveData;
-
-    m_resulteList.clear();
-    m_resulteList = recieveData.split(",");
-
-    recieveData.clear();
-
-    handingRevData();
-}
-
-
 void Widget::handingRevData()
 {
     int i = 0;
@@ -166,11 +144,4 @@ void Widget::handingRevData()
     }
 }
 
-
-void Widget::on_pushButton_clicked()    //use for test
-{
-    QByteArray TxData = "1111";
-    m_serialport->write(TxData);
-    ui->lineEdit->setFocus(Qt::ActiveWindowFocusReason);
-}
 

@@ -10,6 +10,7 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include "datamanage.h"
+#include "recievedata.h"
 
 namespace Ui {
 class Widget;
@@ -29,12 +30,11 @@ private:
     Ui::Widget *ui;
 
 public:
-    QSerialPort* m_serialport;
-    QTimer* timer;
     QStringList m_resulteList;
     QString m_barCode;
 
     dataManage* DB;
+    RecieveData* RecvDate;
 
 public:
     void handingRevData();
@@ -44,9 +44,7 @@ public:
     void keyPressEvent ( QKeyEvent * event );
 //    void keyReleaseEvent ( QKeyEvent * event );
 
-public slots:
-    void on_pushButton_clicked();
-    void updateAA();
+
 };
 
 #endif // WIDGET_H

@@ -28,10 +28,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         widget.cpp \
     datamanage.cpp \
-    recievedata.cpp
+    recievedata.cpp \
+    uploadthread.cpp
 
 HEADERS  += widget.h \
     datamanage.h \
-    recievedata.h
+    recievedata.h \
+    data.h \
+    uploadthread.h
 
 FORMS    += widget.ui
