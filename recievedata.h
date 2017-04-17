@@ -3,6 +3,7 @@
 #include <QThread>
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
+#include <QMessageBox>
 #include <QTimer>
 #include <QDebug>
 class RecieveData : public QThread
@@ -26,6 +27,9 @@ protected:
 
 public :
     void RecvData();
+
+signals:
+    void sendData(QStringList);
 
 
 };

@@ -9,8 +9,10 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <QMouseEvent>
+#include <QTcpSocket>
 #include "datamanage.h"
 #include "recievedata.h"
+#include "uploadthread.h"
 
 namespace Ui {
 class Widget;
@@ -32,17 +34,31 @@ private:
 public:
     QStringList m_resulteList;
     QString m_barCode;
+    QTimer timer_connect;
+    QTimer qtime;
+    QString IP;
+    bool flag;
 
     dataManage* DB;
-    RecieveData* RecvDate;
+    RecieveData* RecvData;
+    UpLoadThread* upLoadData;
+    QTcpSocket* m_tcpSocket;
 
 public:
-    void handingRevData();
+    void displayData();
     void saveData();
+    void connectIP();
 
     void mousePressEvent(QMouseEvent* event);
     void keyPressEvent ( QKeyEvent * event );
 //    void keyReleaseEvent ( QKeyEvent * event );
+
+public slots:
+    void recvData(QStringList);
+    void onProgress();
+    void connected();
+    void disconnected();
+    void onError(QAbstractSocket::SocketError);
 
 
 };

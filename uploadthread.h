@@ -1,4 +1,4 @@
-#ifndef UPLOADTHREAD_H
+﻿#ifndef UPLOADTHREAD_H
 #define UPLOADTHREAD_H
 
 #include <QThread>
@@ -10,7 +10,7 @@ class UpLoadThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit UpLoadThread(dataManage *DB, QTcpSocket* tcpSocket, std::vector<std::pair<QString, QString>>* Addrs, QString user_name);
+    explicit UpLoadThread(dataManage *DB, QTcpSocket* tcpSocket, QString user_name);
     ~UpLoadThread();
     bool isRun;
 
@@ -28,7 +28,6 @@ public slots:
     void keepAlive();
     void delete_data();
     void login_usr();
-//    void Stop();
 
 
 protected:
@@ -39,8 +38,7 @@ private:
     ushort work_tags;
     QStringList list;
     QString user_name_login;
-//    QSqlQuery* query;
-    std::vector<std::pair<QString, QString>>* Addrs;
+    QVector< QString>  Addrs;
     int state;
     int index;
 

@@ -311,7 +311,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        label->setText(QApplication::translate("Widget", "\346\235\241\347\240\201:", Q_NULLPTR));
+        label->setText(QApplication::translate("Widget", "BarCode:", Q_NULLPTR));
         label_2->setText(QApplication::translate("Widget", "Name:", Q_NULLPTR));
         label_3->setText(QApplication::translate("Widget", "Value:", Q_NULLPTR));
         label_4->setText(QApplication::translate("Widget", "Date:", Q_NULLPTR));

@@ -43,21 +43,26 @@ void RecieveData::RecvData()
     if(m_returnList[0].compare("Leak") != 0)
     {
         qDebug()<<"Not leak data!";
+        QMessageBox::warning(NULL,"Tips","Not leak data!");
         return;
     }
 
-    if(m_returnList[12].indexOf("\r\n") == -1 || m_returnList.length() < 13)
+    if(m_returnList.length() != 13 || m_returnList[12].indexOf("\r\n") == -1)
     {
         qDebug()<<"Not full data!";
+        QMessageBox::warning(NULL,"Tips","Not full data!");
         return;
     }
     else
     {
         m_returnList[12].remove("\r\n");
     }
-    qDebug()<<recieveData;
-    qDebug()<<m_returnList;
+
+//    qDebug()<<recieveData;
+//    qDebug()<<m_returnList;
 
     recieveData.clear();
+
+    emit sendData(m_returnList);
 
 }

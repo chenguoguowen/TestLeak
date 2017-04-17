@@ -58,7 +58,7 @@ QStringList dataManage::selectAllData(QString str)
     sql_query.next();
 
     QStringList list;
-    for(int i = 0;i < 102;i++)
+    for(int i = 0;i < 15;i++)
     {
         list.append(sql_query.value(i).toString());
     }
@@ -76,10 +76,12 @@ bool dataManage::insertData(QString sqlStr)
     {
         qDebug()<<dataBase.lastError();
         qDebug()<<"Insert faile!";
+        lock.unlock();
         return false;
     }
-    return true;
     lock.unlock();
+    return true;
+
 }
 
 //void dataManage::createTable(QString tableName,QString rankName)

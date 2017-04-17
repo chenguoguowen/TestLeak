@@ -34,7 +34,7 @@
             </font>
            </property>
            <property name="text">
-            <string>条码:</string>
+            <string>BarCode:</string>
            </property>
           </widget>
          </item>
