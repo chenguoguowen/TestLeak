@@ -1,0 +1,31 @@
+﻿#ifndef RECIEVEDATA_H
+#define RECIEVEDATA_H
+#include <QThread>
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
+#include <QTimer>
+#include <QDebug>
+class RecieveData : public QThread
+{
+public:
+    RecieveData();
+
+
+public:
+    bool isRun;
+
+    QSerialPort* m_serialport;
+    QTimer* timer;
+    QStringList m_returnList;
+
+protected:
+    void run();
+
+public slots:
+    void updateAA();
+
+signals:
+    void recvEmit();
+};
+
+#endif // RECIEVEDATA_H
